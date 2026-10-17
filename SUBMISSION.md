@@ -10,6 +10,10 @@ Repair Relay helps neighbourhood organisers turn repair requests and volunteer s
 
 Repair days are hard to coordinate: an organiser needs to know what is coming, who can help, how long fixes may take, and what needs safety review. ISTAT reports repair or preparation-for-reuse centres in only 19.6% of Italian provincial-capital municipalities in 2024 (https://www.istat.it/comunicato-stampa/ambiente-urbano-anno-2024/). This provides broader context, not evidence of a local pilot.
 
+## Specific local evidence required before submission
+
+The official kickoff prompt asks for a problem personally seen in the entrant's community (https://neighborhood-hacks-2026.devpost.com/updates/47044-neighborhood-hacks-starts-now). The entrant has agreed to test the app and provide a real observation plus one requested improvement. That evidence has not arrived yet. Add only verified first-hand details here before submitting; the ISTAT statistic above cannot substitute for this requirement.
+
 ## What it does
 
 Organisers create a repair day, add requests and volunteer skills, and receive a time-based schedule. Unmatched requests appear on a waitlist. Safety-flagged cases are held for qualified review. Organisers can record outcomes, print a plan, or export/import JSON. A labelled fictional example makes the flow easy to inspect.
@@ -36,7 +40,7 @@ Pilot with a real neighbourhood group, improve skill and station modelling, and 
 - Live demo: https://masomo88.github.io/RepairRelay-NeighborhoodHacks-2026/
 - Public source: https://github.com/masomo88/RepairRelay-NeighborhoodHacks-2026
 - Demo video for Devpost: https://youtu.be/kOVYe9LRZQk (unlisted, 2:22 on YouTube)
-- Check the official detailed challenge prompt when published.
+- Add the entrant's first-hand local observation and incorporate their requested app improvement.
 - Have the entrant review the AI disclosure and final application.
 
 AI authorship note: Codex generated substantial code and text. The entrant must review, understand, and make their own meaningful contribution before claiming the work meets the FAQ expectation that it is primarily theirs. Do not claim interviews, pilot use, or personal observations that have not occurred.

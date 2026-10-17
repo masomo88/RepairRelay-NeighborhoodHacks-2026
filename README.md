@@ -52,7 +52,7 @@ The Neighborhood Hacks rules and FAQ say the event is online, free, open to high
 https://neighborhood-hacks-2026.devpost.com/rules
 https://neighborhoodhacks.org/faq/
 
-The official detailed challenge page still says its prompt is to be announced: https://neighborhoodhacks.org/challenge/ . Fit must be checked when it appears. The submission requires a 2–6 minute working demo video, public source, and written problem evidence. See SUBMISSION.md and DEMO_SCRIPT.md.
+The kickoff update published the prompt: build a working solution to a problem the entrant has personally seen affect people nearby (https://neighborhood-hacks-2026.devpost.com/updates/47044-neighborhood-hacks-starts-now). The dedicated challenge page still says "TO BE ANNOUNCED", but the update supplies the operative prompt. Project fit remains conditional on the entrant providing a truthful local observation. The submission requires a 2–6 minute working demo video, public source, and written problem evidence. See SUBMISSION.md and DEMO_SCRIPT.md.
 
 The heuristic does not model breaks, stations, or safety qualifications. A real event should validate demand with its community and gain consent for personal data.
 

@@ -26,3 +26,5 @@ Non è stata effettuata alcuna iscrizione o candidatura Devpost.
 **Limiti da saper spiegare:** il programma usa regole deterministiche, non un modello AI che decide le riparazioni. Non verifica competenze professionali, non fornisce istruzioni di sicurezza, non coordina più dispositivi e non garantisce la pianificazione ottimale. I dati restano nel browser usato; l'esportazione JSON va trattata con attenzione.
 
 **Come è stata usata l'AI:** Codex ha generato una parte sostanziale del codice, dell'interfaccia, dei test, del testo e del video. Non attribuirti quel lavoro tecnico. Puoi contribuire con la tua osservazione reale, provando l'app, decidendo un cambiamento e spiegando onestamente risultati e limiti. Resta da chiarire con l'organizzatore se tale contributo soddisfa il requisito della FAQ secondo cui il lavoro presentato deve essere principalmente tuo.
+
+Il 17 ottobre abbiamo [chiesto un chiarimento nel forum pubblico](https://neighborhood-hacks-2026.devpost.com/forum_topics/45580-clarification-on-ai-assistance-and-primarily-your-own-work), dichiarando il ruolo sostanziale di Codex. Al momento dell'aggiornamento non c'era ancora una risposta.

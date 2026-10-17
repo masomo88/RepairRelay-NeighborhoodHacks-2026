@@ -48,3 +48,5 @@ AI authorship note: Codex generated substantial code and text. The entrant must 
 
 
 A 2:21 captioned screen recording exists at https://masomo88.github.io/RepairRelay-NeighborhoodHacks-2026/video.html . Devpost accepts the unlisted YouTube link above in its video field. The GitHub Pages WebM remains a review copy. See https://help.devpost.com/article/85-uploading-a-demo-video .
+
+On 17 October, we [asked the organisers publicly](https://neighborhood-hacks-2026.devpost.com/forum_topics/45580-clarification-on-ai-assistance-and-primarily-your-own-work) whether this workflow satisfies the FAQ's 'primarily your own' requirement. The question discloses Codex's substantial role. There was no reply when this draft was updated; eligibility on that point remains unresolved.

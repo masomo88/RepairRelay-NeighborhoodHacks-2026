@@ -30,7 +30,15 @@ window.addEventListener('load', async () => {
     await wait();
     if (doc.getElementById('metric-repaired').textContent !== '1') throw Error('reported outcome');
     if (!doc.getElementById('metric-weight').textContent.includes('1.00 kg')) throw Error('reported weight');
-    result.textContent = 'PASS: init, example, matching, safety hold, request form, outcome and sample exclusion';
+    const storage = doc.defaultView.Storage.prototype;
+    const originalSetItem = storage.setItem;
+    try {
+      storage.setItem = () => { throw Error('storage disabled'); };
+      doc.getElementById('load-example').click();
+      await wait();
+      if (!doc.getElementById('feedback').textContent.includes('Browser storage is unavailable')) throw Error('storage warning');
+    } finally { storage.setItem = originalSetItem; }
+    result.textContent = 'PASS: init, example, matching, safety hold, request form, outcome, sample exclusion and storage warning';
   } catch (error) {
     result.textContent = 'FAIL: ' + error.message;
   }

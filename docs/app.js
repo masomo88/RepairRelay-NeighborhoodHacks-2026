@@ -46,13 +46,15 @@ function feedback(message, isError = false) {
 }
 function save() {
   board = validateBoard(board);
+  let persisted = true;
   try { localStorage.setItem(KEY, JSON.stringify(board)); }
-  catch { feedback('Browser storage is unavailable. Export your board to keep it.', true); }
+  catch { persisted = false; feedback('Browser storage is unavailable. Export your board to keep it.', true); }
   render();
+  return persisted;
 }
 function act(change) {
   const previous = structuredClone(board);
-  try { change(); board = validateBoard(board); save(); feedback('Board updated.'); return true; }
+  try { change(); board = validateBoard(board); if (save()) feedback('Board updated.'); return true; }
   catch (error) { board = previous; render(); feedback(error.message || 'Could not update board.', true); return false; }
 }
 function card(title, detail, chips = []) {
@@ -182,12 +184,12 @@ $('volunteer-form').addEventListener('submit', event => {
   if (success) form.reset();
 });
 $('load-example').addEventListener('click', () => {
-  board = structuredClone(example); save(); feedback('Fictional example loaded. These entries do not count as actual results.');
+  board = structuredClone(example); if (save()) feedback('Fictional example loaded. These entries do not count as actual results.');
   $('workspace').scrollIntoView({ behavior: 'smooth' });
 });
 $('reset-board').addEventListener('click', () => {
   if (confirm('Clear the board stored in this browser? Export a copy first if needed.')) {
-    board = empty(); save(); feedback('Board cleared.');
+    board = empty(); if (save()) feedback('Board cleared.');
   }
 });
 $('export-json').addEventListener('click', () => {
@@ -204,7 +206,7 @@ $('import-json').addEventListener('change', async event => {
     if (file.size > 100000) throw new Error('Choose a JSON file under 100 KB.');
     const imported = validateBoard(JSON.parse(await file.text()));
     board = imported;
-    save(); feedback('Board imported.');
+    if (save()) feedback('Board imported.');
   } catch (error) { feedback(error.message, true); }
   event.target.value = '';
 });

@@ -27,7 +27,7 @@ Requires Node.js 20 or newer. No package install, API key, account, or paid serv
     npm test
     npm run build
 
-Visit http://127.0.0.1:3000 after starting. The build command copies the static browser app into this project's docs folder. In the original multi-project repository, use npm run build -- --parent-pages to refresh its shared GitHub Pages directory. POST /api/schedule accepts an exported board JSON and returns the plan. The browser uses the same engine locally, so static hosting needs no server.
+Visit http://127.0.0.1:3000 after starting. The build command copies the static browser app into this project's docs folder. POST /api/schedule accepts an exported board JSON and returns the plan. The browser uses the same engine locally, so static hosting needs no server.
 
 ## Architecture
 
@@ -56,13 +56,13 @@ The official detailed challenge page still says its prompt is to be announced: h
 
 The heuristic does not model breaks, stations, or safety qualifications. A real event should validate demand with its community and gain consent for personal data.
 
-Public demo: https://masomo88.github.io/DevPost/repair-relay/
+Public demo: https://masomo88.github.io/RepairRelay-NeighborhoodHacks-2026/
 
 
 
 Public source: https://github.com/masomo88/RepairRelay-NeighborhoodHacks-2026
 
-Captioned 2:21 demo video: https://masomo88.github.io/DevPost/repair-relay/video.html
-Devpost requires the final video-field URL to be on YouTube, Vimeo, or Youku; the Pages-hosted WebM is a review copy: https://help.devpost.com/article/85-uploading-a-demo-video
+Captioned 2:21 demo video: https://masomo88.github.io/RepairRelay-NeighborhoodHacks-2026/video.html
+Unlisted YouTube demo for the Devpost video field: https://youtu.be/kOVYe9LRZQk . The Pages-hosted WebM is a review copy.
 
 

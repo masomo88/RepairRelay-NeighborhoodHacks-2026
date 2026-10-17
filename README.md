@@ -2,6 +2,8 @@
 
 ![Repair Relay interface](assets/preview.png)
 
+The [planning board](assets/planning-board.png) and [safety review](assets/safety-review.png) screenshots show the labelled fictional example. No real repair outcomes are represented.
+
 [Guida rapida in italiano per provare la demo](START_HERE_IT.md).
 
 A free browser-based planner for local repair events, built from scratch on 17 October 2026 during Neighborhood Hacks 2026.
@@ -28,6 +30,8 @@ Requires Node.js 20 or newer. No package install, API key, account, or paid serv
     npm start
     npm test
     npm run build
+
+Optional: `npm run screenshots` regenerates two submission screenshots from the fictional example. It requires Playwright and a local Chrome installation; the app itself does not.
 
 Visit http://127.0.0.1:3000 after starting. The build command copies the static browser app into this project's docs folder. POST /api/schedule accepts an exported board JSON and returns the plan. The browser uses the same engine locally, so static hosting needs no server.
 
@@ -66,5 +70,3 @@ Public source: https://github.com/masomo88/RepairRelay-NeighborhoodHacks-2026
 
 Captioned 2:21 demo video: https://masomo88.github.io/RepairRelay-NeighborhoodHacks-2026/video.html
 Unlisted YouTube demo for the Devpost video field: https://youtu.be/kOVYe9LRZQk . The Pages-hosted WebM is a review copy.
-
-

@@ -7,6 +7,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "node --test",
-    "build": "node scripts/build.mjs"
+    "build": "node scripts/build.mjs",
+    "screenshots": "node scripts/capture-screenshots.mjs"
   }
 }

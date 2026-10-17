@@ -30,15 +30,33 @@ window.addEventListener('load', async () => {
     await wait();
     if (doc.getElementById('metric-repaired').textContent !== '1') throw Error('reported outcome');
     if (!doc.getElementById('metric-weight').textContent.includes('1.00 kg')) throw Error('reported weight');
+    const originalConfirm = doc.defaultView.confirm;
+    try {
+      doc.defaultView.confirm = () => false;
+      doc.getElementById('load-example').click();
+      await wait();
+      if (doc.getElementById('metric-requests').textContent !== '5') throw Error('cancelled example replaced board');
+      const imported = JSON.parse(doc.defaultView.localStorage.getItem('repair-relay-board-v1'));
+      imported.requests = [];
+      imported.volunteers = [];
+      const input = doc.getElementById('import-json');
+      const transfer = new doc.defaultView.DataTransfer();
+      transfer.items.add(new doc.defaultView.File([JSON.stringify(imported)], 'test-board.json', { type: 'application/json' }));
+      input.files = transfer.files;
+      input.dispatchEvent(new doc.defaultView.Event('change', { bubbles: true }));
+      await wait();
+      if (doc.getElementById('metric-requests').textContent !== '5') throw Error('cancelled import replaced board');
+    } finally { doc.defaultView.confirm = originalConfirm; }
     const storage = doc.defaultView.Storage.prototype;
     const originalSetItem = storage.setItem;
     try {
+      doc.defaultView.confirm = () => true;
       storage.setItem = () => { throw Error('storage disabled'); };
       doc.getElementById('load-example').click();
       await wait();
       if (!doc.getElementById('feedback').textContent.includes('Browser storage is unavailable')) throw Error('storage warning');
-    } finally { storage.setItem = originalSetItem; }
-    result.textContent = 'PASS: init, example, matching, safety hold, request form, outcome, sample exclusion and storage warning';
+    } finally { storage.setItem = originalSetItem; doc.defaultView.confirm = originalConfirm; }
+    result.textContent = 'PASS: init, example, matching, safety hold, request form, outcome, sample exclusion, replacement guards and storage warning';
   } catch (error) {
     result.textContent = 'FAIL: ' + error.message;
   }

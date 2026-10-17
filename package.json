@@ -8,6 +8,7 @@
     "start": "node server.js",
     "test": "node --test",
     "build": "node scripts/build.mjs",
-    "screenshots": "node scripts/capture-screenshots.mjs"
+    "screenshots": "node scripts/capture-screenshots.mjs",
+    "browser-smoke": "node scripts/check-browser-smoke.mjs"
   }
 }

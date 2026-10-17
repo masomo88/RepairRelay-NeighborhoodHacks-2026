@@ -29,6 +29,10 @@ try {
   board = empty();
 }
 
+function hasUserWork() {
+  return board.requests.length > 0 || board.volunteers.length > 0 || JSON.stringify(board.event) !== JSON.stringify(empty().event);
+}
+
 function uid() {
   return globalThis.crypto?.randomUUID?.() || String(Date.now()) + '-' + String(Math.random()).slice(2);
 }
@@ -184,6 +188,10 @@ $('volunteer-form').addEventListener('submit', event => {
   if (success) form.reset();
 });
 $('load-example').addEventListener('click', () => {
+  if (hasUserWork() && !confirm('Replace this board with the fictional example? Export a copy first if needed.')) {
+    feedback('Example cancelled. Your board was kept.');
+    return;
+  }
   board = structuredClone(example); if (save()) feedback('Fictional example loaded. These entries do not count as actual results.');
   $('workspace').scrollIntoView({ behavior: 'smooth' });
 });
@@ -205,8 +213,12 @@ $('import-json').addEventListener('change', async event => {
   try {
     if (file.size > 100000) throw new Error('Choose a JSON file under 100 KB.');
     const imported = validateBoard(JSON.parse(await file.text()));
-    board = imported;
-    if (save()) feedback('Board imported.');
+    if (hasUserWork() && !confirm('Replace this board with the imported file? Export a copy first if needed.')) {
+      feedback('Import cancelled. Your board was kept.');
+    } else {
+      board = imported;
+      if (save()) feedback('Board imported.');
+    }
   } catch (error) { feedback(error.message, true); }
   event.target.value = '';
 });

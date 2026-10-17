@@ -20,7 +20,7 @@ Repair-day organisers need to gather requests, know volunteer skills, avoid over
 - Transparent skill- and capacity-aware matching, with a timed schedule.
 - Safety review hold and waitlist.
 - Outcome recording with fictional examples excluded from reported totals.
-- Browser storage, JSON export/import, and print view.
+- Browser storage, JSON export/import, and print view. Example loading and import ask before replacing existing work.
 - Optional Node HTTP scheduling endpoint.
 
 ## Run and test
@@ -31,7 +31,7 @@ Requires Node.js 20 or newer. No package install, API key, account, or paid serv
     npm test
     npm run build
 
-Optional: `npm run screenshots` regenerates two submission screenshots from the fictional example. It requires Playwright and a local Chrome installation; the app itself does not.
+Optional: `npm run screenshots` regenerates two submission screenshots from the fictional example. It requires Playwright and a local Chrome installation; the app itself does not. The same optional tools run `npm run browser-smoke` to check browser interactions.
 
 Visit http://127.0.0.1:3000 after starting. The build command copies the static browser app into this project's docs folder. POST /api/schedule accepts an exported board JSON and returns the plan. The browser uses the same engine locally, so static hosting needs no server.
 

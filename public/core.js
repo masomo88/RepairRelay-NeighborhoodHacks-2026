@@ -115,7 +115,8 @@ export function makeSchedule(input) {
       .sort((a, b) => busy.get(a.id) / a.capacity - busy.get(b.id) / b.capacity || a.alias.localeCompare(b.alias));
     const person = eligible[0];
     if (!person) {
-      waitlist.push(request);
+      const hasSkill = board.volunteers.some(volunteer => volunteer.skills.includes(request.category));
+      waitlist.push({ ...request, reason: hasSkill ? 'capacity' : 'skill' });
       continue;
     }
     const offset = busy.get(person.id);

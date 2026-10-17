@@ -47,6 +47,14 @@ window.addEventListener('load', async () => {
       await wait();
       if (doc.getElementById('metric-requests').textContent !== '5') throw Error('cancelled import replaced board');
     } finally { doc.defaultView.confirm = originalConfirm; }
+    form.elements.namedItem("item").value = 'Lunch box';
+    form.elements.issue.value = 'Loose latch';
+    form.elements.category.value = 'household';
+    form.elements.minutes.value = '20';
+    form.elements.grams.value = '300';
+    form.requestSubmit();
+    await wait();
+    if (!doc.getElementById('wait-list').textContent.includes('No volunteer lists Household items as a skill')) throw Error('waitlist explanation');
     const storage = doc.defaultView.Storage.prototype;
     const originalSetItem = storage.setItem;
     try {
@@ -56,7 +64,7 @@ window.addEventListener('load', async () => {
       await wait();
       if (!doc.getElementById('feedback').textContent.includes('Browser storage is unavailable')) throw Error('storage warning');
     } finally { storage.setItem = originalSetItem; doc.defaultView.confirm = originalConfirm; }
-    result.textContent = 'PASS: init, example, matching, safety hold, request form, outcome, sample exclusion, replacement guards and storage warning';
+    result.textContent = 'PASS: init, example, matching, safety hold, request form, outcome, sample exclusion, replacement guards, waitlist explanation and storage warning';
   } catch (error) {
     result.textContent = 'FAIL: ' + error.message;
   }

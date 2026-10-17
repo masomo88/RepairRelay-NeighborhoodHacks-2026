@@ -142,7 +142,12 @@ function render() {
   const waitList = $('wait-list'); clear(waitList);
   waitList.append(node('p', 'subhead', 'WAITLIST · ' + waitlist.length));
   if (!waitlist.length) waitList.append(emptyCard('No unmatched requests.'));
-  waitlist.forEach(item => waitList.append(card(item.item, 'Needs ' + CATEGORIES[item.category] + ' · ' + item.minutes + ' min', [chip('WAITING', 'wait')])));
+  waitlist.forEach(item => {
+    const detail = item.reason === 'skill'
+      ? 'No volunteer lists ' + CATEGORIES[item.category] + ' as a skill · ' + item.minutes + ' min needed'
+      : 'No ' + item.minutes + '-minute slot left with a volunteer skilled in ' + CATEGORIES[item.category];
+    waitList.append(card(item.item, detail, [chip('WAITING', 'wait')]));
+  });
 }
 
 function updateCapacities() {

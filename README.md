@@ -18,7 +18,7 @@ Repair-day organisers need to gather requests, know volunteer skills, avoid over
 - Repair requests with category, duration, optional weight, priority, and safety flag.
 - Volunteer aliases, skills, and available minutes.
 - Transparent skill- and capacity-aware matching, with a timed schedule.
-- Safety review hold and waitlist.
+- Safety review hold and waitlist that explains missing skills or volunteer capacity.
 - Outcome recording with fictional examples excluded from reported totals.
 - Browser storage, JSON export/import, and print view. Example loading and import ask before replacing existing work.
 - Optional Node HTTP scheduling endpoint.

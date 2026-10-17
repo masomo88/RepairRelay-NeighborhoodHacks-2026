@@ -20,6 +20,7 @@ test('assigns by skill and leaves unmatched requests waiting', () => {
   assert.equal(plan.assignments[0].start, '10:00');
   assert.equal(plan.assignments[0].end, '10:40');
   assert.equal(plan.waitlist[0].id, 'b');
+  assert.equal(plan.waitlist[0].reason, 'skill');
 });
 
 test('holds safety cases, even with qualified category volunteer', () => {
@@ -36,6 +37,7 @@ test('does not exceed volunteer capacity', () => {
   const plan = makeSchedule(board);
   assert.equal(plan.assignments.length, 1);
   assert.equal(plan.waitlist.length, 2);
+  assert.equal(plan.waitlist.find(item => item.id === 'c').reason, 'capacity');
 });
 
 test('reported outcomes exclude sample cards', () => {

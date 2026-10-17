@@ -16,7 +16,7 @@ The official kickoff prompt asks for a problem personally seen in the entrant's 
 
 ## What it does
 
-Organisers create a repair day, add requests and volunteer skills, and receive a time-based schedule. Unmatched requests appear on a waitlist. Safety-flagged cases are held for qualified review. Organisers can record outcomes, print a plan, or export/import JSON. A labelled fictional example makes the flow easy to inspect.
+Organisers create a repair day, add requests and volunteer skills, and receive a time-based schedule. Unmatched requests appear on a waitlist that explains whether a matching skill or a free time slot is missing. Safety-flagged cases are held for qualified review. Organisers can record outcomes, print a plan, or export/import JSON. A labelled fictional example makes the flow easy to inspect.
 
 ## How it was built
 

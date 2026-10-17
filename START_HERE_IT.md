@@ -15,3 +15,14 @@
 L'[aggiornamento ufficiale del prompt](https://neighborhood-hacks-2026.devpost.com/updates/47044-neighborhood-hacks-starts-now) chiede un problema osservato personalmente. Senza questa osservazione non possiamo dichiarare completa la candidatura. La [FAQ](https://neighborhoodhacks.org/faq/) ammette AI ma richiede che chi partecipa capisca il progetto e contribuisca personalmente. Il codice e il testo generati con Codex sono dichiarati nella bozza. La tua osservazione, la prova dell'app e la modifica richiesta saranno documentate onestamente.
 
 Non è stata effettuata alcuna iscrizione o candidatura Devpost.
+
+## Come funziona, senza leggere codice
+
+- Ogni richiesta indica tipo di oggetto, tempo stimato e priorità; ogni volontario indica competenze e minuti disponibili.
+- Il programma considera prima le richieste prioritarie. Assegna ogni richiesta a un volontario con la competenza giusta e tempo sufficiente, cercando di distribuire il carico. Mostra l'orario risultante.
+- Una richiesta segnata **Needs safety review** non viene assegnata automaticamente. Se manca una competenza o il tempo disponibile, compare in **Waitlist**.
+- Il numero **reported repaired** aumenta solo quando una richiesta reale viene segnata manualmente come riparata. I dati inventati della demo non contano. Il peso è una stima dell'oggetto, non una misura verificata di rifiuti evitati.
+
+**Limiti da saper spiegare:** il programma usa regole deterministiche, non un modello AI che decide le riparazioni. Non verifica competenze professionali, non fornisce istruzioni di sicurezza, non coordina più dispositivi e non garantisce la pianificazione ottimale. I dati restano nel browser usato; l'esportazione JSON va trattata con attenzione.
+
+**Come è stata usata l'AI:** Codex ha generato una parte sostanziale del codice, dell'interfaccia, dei test, del testo e del video. Non attribuirti quel lavoro tecnico. Puoi contribuire con la tua osservazione reale, provando l'app, decidendo un cambiamento e spiegando onestamente risultati e limiti. Resta da chiarire con l'organizzatore se tale contributo soddisfa il requisito della FAQ secondo cui il lavoro presentato deve essere principalmente tuo.

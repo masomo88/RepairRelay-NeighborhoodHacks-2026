@@ -2,6 +2,8 @@
 
 ![Repair Relay interface](assets/preview.png)
 
+[Guida rapida in italiano per provare la demo](START_HERE_IT.md).
+
 A free browser-based planner for local repair events, built from scratch on 17 October 2026 during Neighborhood Hacks 2026.
 
 ## Problem

@@ -212,6 +212,7 @@ $('export-json').addEventListener('click', () => {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
   feedback('Board exported as JSON.');
 });
+$('import-trigger').addEventListener('click', () => $('import-json').click());
 $('import-json').addEventListener('change', async event => {
   const file = event.target.files?.[0];
   if (!file) return;

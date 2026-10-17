@@ -10,6 +10,7 @@
   <script type="module" src="./app.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#workspace">Skip to planning board</a>
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Repair Relay home"><span class="brand-mark">↗</span><span>REPAIR<br>RELAY</span></a>
     <div class="top-note">LOCAL ACTION TOOLKIT <span class="dot"></span> PRIVATE IN YOUR BROWSER</div>
@@ -38,7 +39,7 @@
       <div class="intro-right"><p>Repair events can be hard to coordinate: organisers need to know what is coming, which skills are available, and what needs a safety review. Repair Relay makes that work visible in one place.</p><p class="source-note">Context: ISTAT reports that only 19.6% of Italian provincial-capital municipalities had repair or preparation-for-reuse centres in 2024. <a href="https://www.istat.it/comunicato-stampa/ambiente-urbano-anno-2024/" target="_blank" rel="noreferrer">Read the source ↗</a></p></div>
     </section>
 
-    <section class="workspace" id="workspace">
+    <section class="workspace" id="workspace" tabindex="-1">
       <div class="section-head"><div><p class="eyebrow">YOUR REPAIR DAY</p><h2>The planning board.</h2></div><p>Everything stays in this browser unless you export it. No sign-up or API key.</p></div>
       <div class="board-grid">
         <div class="left-column">
@@ -85,7 +86,7 @@
           <section class="list-panel"><div class="list-heading"><div><span class="list-index alert-index">!</span><h3>Safety review & waitlist</h3></div></div><div id="safety-list" class="cards"></div><div id="wait-list" class="cards"></div><p class="safety-note">Flagged items are never assigned automatically. A qualified person should review each case before any work begins. This tool gives no repair or electrical safety instructions.</p></section>
         </div>
       </div>
-      <div class="export-panel"><div><p class="eyebrow dark">TAKE IT WITH YOU</p><h3>Keep your plan portable.</h3><p>Export an organiser copy, bring it back later, or print a day-of schedule. The demo uses fictional entries.</p></div><div class="export-actions"><button class="button outline" id="export-json" type="button">Export JSON ↗</button><label class="button outline import-button">Import JSON<input id="import-json" type="file" accept="application/json,.json" hidden></label><button class="button outline" id="print-plan" type="button">Print plan ↗</button><button class="text-button" id="reset-board" type="button">Clear board</button></div></div>
+      <div class="export-panel"><div><p class="eyebrow dark">TAKE IT WITH YOU</p><h3>Keep your plan portable.</h3><p>Export an organiser copy, bring it back later, or print a day-of schedule. The demo uses fictional entries.</p></div><div class="export-actions"><button class="button outline" id="export-json" type="button">Export JSON ↗</button><button class="button outline" id="import-trigger" type="button">Import JSON</button><input id="import-json" type="file" accept="application/json,.json" hidden><button class="button outline" id="print-plan" type="button">Print plan ↗</button><button class="text-button" id="reset-board" type="button">Clear board</button></div></div>
       <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
     </section>
     <section class="closing"><span class="eyebrow">GOOD THINGS LAST LONGER TOGETHER</span><h2>Make room for<br><em>another chapter.</em></h2><a class="button primary" href="#workspace">Start a repair day ↗</a></section>

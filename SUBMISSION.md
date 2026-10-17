@@ -24,7 +24,7 @@ Vanilla HTML, CSS, and JavaScript with an ES module matching engine. Optional No
 
 ## What makes it useful
 
-The interface separates planned matches, safety holds, waitlisted requests, and self-reported completed repairs. Fictional entries cannot inflate the outcome metrics. It can be used from one laptop and a printed schedule without any account.
+The interface separates planned matches, safety holds, waitlisted requests, and self-reported completed repairs. Fictional entries cannot inflate the outcome metrics. It can be used from one laptop and a printed schedule without any account. Keyboard users can skip directly to the board and open JSON import with Enter; the interface also respects reduced-motion settings.
 
 ## Challenges and learning
 
@@ -34,6 +34,9 @@ Capacity and safety constraints need to be visible. The tool displays waitlisted
 
 Pilot with a real neighbourhood group, improve skill and station modelling, and consider consent-aware multi-device collaboration. These are future plans, not shipped features.
 
+## Published judging rubric and evidence
+
+The [official rubric](https://neighborhoodhacks.org/judging/) weights community relevance 25%, impact potential 20%, technical execution 20%, creativity 15%, presentation and clarity 10%, and accessibility 10%. The project currently has a working demo, source, tests, a video, screenshots, responsive layouts, and keyboard navigation. It has no verified local observation or pilot. The entrant's first-hand evidence is essential for the highest-weighted criterion; the published ISTAT figure is only general context. The organisers have not yet answered the AI-authorship question, so this draft does not claim full eligibility.
 ## Before submission
 
 - Review the existing 2:21 screen capture and add a truthful spoken explanation if the organisers require one.

@@ -1,0 +1,40 @@
+<!doctype html><html><meta charset="utf-8"><title>Repair Relay browser smoke</title>
+<iframe id="app" src="../public/index.html" style="width:1200px;height:800px"></iframe>
+<pre id="result">RUNNING</pre>
+<script>
+window.addEventListener('load', async () => {
+  const result = document.getElementById('result');
+  try {
+    const doc = document.getElementById('app').contentDocument;
+    const wait = () => new Promise(resolve => setTimeout(resolve, 250));
+    await wait();
+    if (doc.getElementById('metric-requests').textContent !== '0') throw Error('initial board');
+    doc.getElementById('load-example').click();
+    await wait();
+    if (doc.getElementById('metric-requests').textContent !== '4') throw Error('example requests');
+    if (doc.getElementById('metric-matched').textContent !== '3') throw Error('example matching');
+    if (!doc.getElementById('safety-list').textContent.includes('Table lamp')) throw Error('safety hold');
+    const form = doc.getElementById('request-form');
+    form.elements.namedItem("item").value = 'Test stool';
+    form.elements.issue.value = 'Loose leg';
+    form.elements.category.value = 'furniture';
+    form.elements.minutes.value = '20';
+    form.elements.grams.value = '1000';
+    form.requestSubmit();
+    await wait();
+    if (doc.getElementById('metric-requests').textContent !== '5') throw Error('new request: ' + doc.getElementById('feedback').textContent + ' / validity ' + form.checkValidity() + ' / item ' + form.elements.namedItem('item').value);
+    const card = [...doc.querySelectorAll('#request-list .card')].find(item => item.textContent.includes('Test stool'));
+    if (!card) throw Error('request card');
+    card.querySelector('select').value = 'repaired';
+    card.querySelector('select').dispatchEvent(new Event('change', { bubbles: true }));
+    await wait();
+    if (doc.getElementById('metric-repaired').textContent !== '1') throw Error('reported outcome');
+    if (!doc.getElementById('metric-weight').textContent.includes('1.00 kg')) throw Error('reported weight');
+    result.textContent = 'PASS: init, example, matching, safety hold, request form, outcome and sample exclusion';
+  } catch (error) {
+    result.textContent = 'FAIL: ' + error.message;
+  }
+});
+</script></html>
+
+
